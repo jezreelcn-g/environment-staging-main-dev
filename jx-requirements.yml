@@ -1,35 +1,75 @@
+autoUpdate:
+  enabled: false
+  schedule: ""
+bootConfigURL: https://github.com/jenkins-x/jenkins-x-boot-config
 cluster:
-  clusterName: ""
-  environmentGitOwner: ""
-  environmentGitPublic: false
-  project: ""
-  provider: gke
-  zone: ""
-gitops: true
+  clusterName: staging-main
+  environmentGitOwner: jezreelcn-g
+  environmentGitPublic: true
+  gitKind: github
+  gitName: github
+  gitServer: https://github.com
+  namespace: jx
+  provider: eks
+  region: us-east-1
+  registry: 511433110480.dkr.ecr.us-east-1.amazonaws.com
 environments:
-- key: dev
-- key: staging
-- key: production
+- ingress:
+    domain: cogni-staging.is
+    externalDNS: true
+    namespaceSubDomain: -jx.
+    tls:
+      email: jezreel.camacho@globant.com
+      enabled: true
+      production: true
+  key: dev
+- ingress:
+    domain: ""
+    externalDNS: false
+    namespaceSubDomain: ""
+    tls:
+      email: ""
+      enabled: false
+      production: false
+  key: staging
+- ingress:
+    domain: ""
+    externalDNS: false
+    namespaceSubDomain: ""
+    tls:
+      email: ""
+      enabled: false
+      production: false
+  key: production
+gitops: true
 ingress:
-  domain: ""
-  externalDNS: false
+  domain: cogni-staging.is
+  externalDNS: true
+  namespaceSubDomain: -jx.
   tls:
-    email: ""
-    enabled: false
-    production: false
+    email: jezreel.camacho@globant.com
+    enabled: true
+    production: true
 kaniko: true
+repository: nexus
 secretStorage: local
 storage:
+  backup:
+    enabled: true
+    url: s3://cogni-jenkinsx-cluster-backup
   logs:
-    enabled: false
-    url: ""
+    enabled: true
+    url: s3://cogni-jenkinsx-cluster-logs
   reports:
-    enabled: false
-    url: ""
+    enabled: true
+    url: s3://cogni-jenkinsx-cluster-reports
   repository:
-    enabled: false
-    url: ""
+    enabled: true
+    url: s3://cogni-jenkinsx-repository
+terraform: true
+vault: {}
+velero: {}
 versionStream:
-  ref: "master"
+  ref: v1.0.426
   url: https://github.com/jenkins-x/jenkins-x-versions.git
 webhook: prow

@@ -1,0 +1,10 @@
+adminUser:
+  password: local:staging-main/adminUser:password
+  username: admin
+enableDocker: false
+pipelineUser:
+  email: jezreel.camacho@globant.com
+  token: local:staging-main/pipelineUser:token
+  username: jezreelcn-g
+prow:
+  hmacToken: local:staging-main/prow:hmacToken
