@@ -1,7 +1,7 @@
 dependencies:
 - host: github.com
   owner: jezreelcn-g
-  repo: jx-go-v16
-  url: https://github.com/jezreelcn-g/jx-go-v16.git
+  repo: jx-go-v17
+  url: https://github.com/jezreelcn-g/jx-go-v17.git
   version: ""
   versionURL: ""

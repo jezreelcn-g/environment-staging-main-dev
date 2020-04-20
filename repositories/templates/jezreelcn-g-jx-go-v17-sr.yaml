@@ -1,0 +1,21 @@
+apiVersion: jenkins.io/v1
+kind: SourceRepository
+metadata:
+  creationTimestamp: null
+  labels:
+    owner: jezreelcn-g
+    provider: github
+    repository: jx-go-v17
+  name: jezreelcn-g-jx-go-v17
+spec:
+  description: Imported application for jezreelcn-g/jx-go-v17
+  httpCloneURL: https://github.com/jezreelcn-g/jx-go-v17.git
+  org: jezreelcn-g
+  provider: https://github.com
+  providerKind: github
+  providerName: github
+  repo: jx-go-v17
+  scheduler:
+    kind: ""
+    name: ""
+  url: https://github.com/jezreelcn-g/jx-go-v17.git
