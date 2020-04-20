@@ -20,8 +20,8 @@ environments:
     namespaceSubDomain: -jx.
     tls:
       email: jezreel.camacho@globant.com
-      enabled: true
-      production: true
+      enabled: false
+      production: false
   key: dev
 - ingress:
     domain: ""
@@ -48,8 +48,8 @@ ingress:
   namespaceSubDomain: -jx.
   tls:
     email: jezreel.camacho@globant.com
-    enabled: true
-    production: true
+    enabled: false
+    production: false
 kaniko: true
 repository: nexus
 secretStorage: local
